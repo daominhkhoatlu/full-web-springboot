@@ -1,9 +1,8 @@
 package com.spring.khoa.fullspringweb.repository;
 
-import com.spring.khoa.fullspringweb.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import com.spring.khoa.fullspringweb.model.Product;
+
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 }

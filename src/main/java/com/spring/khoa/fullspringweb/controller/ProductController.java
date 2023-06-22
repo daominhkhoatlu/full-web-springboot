@@ -1,12 +1,17 @@
 package com.spring.khoa.fullspringweb.controller;
 
-import com.spring.khoa.fullspringweb.model.Product;
-import com.spring.khoa.fullspringweb.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.spring.khoa.fullspringweb.model.Product;
+import com.spring.khoa.fullspringweb.service.ProductService;
 
 @Controller
 @RequestMapping("/")
@@ -17,7 +22,7 @@ public class ProductController {
     // display list of product
     @RequestMapping(method = RequestMethod.GET)
     public String viewHomePage(Model model) {
-        final Model listProduct = model.addAttribute("listProduct", productService.getAllProduct());
+        model.addAttribute("listProduct", productService.getAllProduct());
         return "index";
     }
 
